@@ -119,7 +119,12 @@ The system will:
 
 ---
 
+## 📷 Hardware Setup
+
+![Hardware Setup](images/hardware_setup.jpg)
 ## 🔧 Installation Guide
+
+---
 
 ### Step 1: Install Raspberry Pi OS
 
