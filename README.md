@@ -1,270 +1,37 @@
-# Women Safety Device Using IoT, GPS & GSM Tracker
+# Raspberry Pi Emergency Alert Prototype
 
+An academic group project exploring an IoT alert workflow with Raspberry Pi, GPS, GSM, a panic-button trigger, and a voice trigger. The documented flow captures a location and sends an alert when a trigger is activated.
 
-## 📌 Project Overview
+> **Safety note:** This is an educational prototype. It is not a tested or guaranteed personal-safety service. Do not rely on it as an emergency response system. Hardware, network coverage, power, and delivery services can fail.
 
-The Women Safety Device Using IoT, GPS & GSM Tracker is a smart wearable safety system developed using Raspberry Pi.  
-This project provides real-time emergency alerts, GPS tracking, image capture, GSM-based SMS alerts, email notifications, and health monitoring.
+## Project scope
 
-The system ensures quick emergency response using:
+The repository documents these prototype components:
 
-- Panic Button Trigger
-- Voice Command Activation
-- GPS Location Sharing
-- Image Capture Evidence
-- GSM SMS Alert System
-- Cloud Monitoring using ThingSpeak
-- Remote Monitoring using RealVNC
+- Raspberry Pi controller and camera
+- GPS and GSM modules for location and SMS workflows
+- Panic button and voice-trigger input
+- Python application with serial, camera, speech, and cloud-related dependencies
 
----
+The README also describes email and cloud logging. Confirm which integrations work with the current hardware and configuration before presenting them as completed.
 
+## Hardware
 
-## 🚨 Problem Statement
+The documented build uses a Raspberry Pi, compatible GPS/GSM modules, camera, panic button, power source, and optional sensors. Module compatibility and wiring depend on the actual hardware revision.
 
-Women safety is a major concern due to increasing crime rates.  
-Most safety apps depend on smartphones, which may not be accessible during emergencies.
+## Setup on the Raspberry Pi
 
-This project provides a wearable IoT-based safety system that works independently and sends real-time emergency alerts with location and image evidence.
+The repository includes a Python dependency file and documents `main.py` as its entry point. On the configured Raspberry Pi OS installation:
 
----
-
-## 🎯 Objectives
-
-- Design a wearable IoT-based women safety device
-- Enable dual emergency activation (panic button + voice command)
-- Send SMS and email alerts with GPS location
-- Capture image during emergency
-- Monitor health parameters (heart rate, temperature)
-- Upload real-time data to ThingSpeak cloud
-- Ensure low-cost and real-time safety solution
-
----
-
-## 🔥 Key Features
-
-- Real-time emergency alert system
-- Panic button activation
-- Voice-based emergency detection
-- GPS-based location tracking
-- GSM SMS alert system
-- Automatic image capture
-- Email alert with image and location
-- Health monitoring (Heart Rate, Temperature, SpO₂)
-- Cloud data logging
-- Remote access using RealVNC
-
----
-
-## 🏗 System Architecture
-
-Main Components:
-
-- Raspberry Pi 4 Model B (Main Controller)
-- GSM Module (SIM800L / SIM900A)
-- GPS Module (Neo-6M)
-- Pi Camera Module
-- Panic Button
-- Bluetooth Module
-- Heart Rate Sensor
-- Temperature Sensor
-- ThingSpeak Cloud
-- Gemini AI Voice Assistant
-
----
-
-## 🧰 Hardware Requirements
-
-- Raspberry Pi 4 Model B
-- GSM Module (SIM800L / SIM900A)
-- GPS Module (Neo-6M)
-- Pi Camera Module
-- Bluetooth Module (HC-05 / BLE)
-- Panic Button Switch
-- Heart Rate Sensor
-- Temperature Sensor
-- Battery Pack / Power Supply
-
----
-
-## 💻 Software Requirements
-
-- Raspberry Pi OS (Raspbian OS)
-- Python 3.x
-- OpenCV
-- pySerial
-- SpeechRecognition
-- ThingSpeak API
-- Google Gemini AI API
-- RealVNC Viewer
-- SMTP Email Service
-
----
-
-## ⚙ Working Principle
-
-The system continuously monitors emergency triggers.
-
-When activated by:
-
-- Panic Button  
-OR  
-- Voice Command ("Emergency")
-
-The system will:
-
-1. Capture image using Pi Camera
-2. Fetch GPS location
-3. Send SMS alert via GSM
-4. Send Email alert with image and location
-5. Upload data to ThingSpeak cloud
-6. Store emergency logs
-
----
-
-## 📷 Hardware Setup
-
-![Hardware Setup](images/hardware_setup.jpg)
-
----
-
-## 🔧 Installation Guide
-
-### Step 1: Install Raspberry Pi OS
-
-Install Raspberry Pi OS using Raspberry Pi Imager.
-
-Enable:
-
-- Camera
-- Serial Port
-- SSH
-- Bluetooth
-
----
-
-### Step 2: Connect Raspberry Pi using RealVNC
-
-1. Connect Raspberry Pi to hotspot
-2. Find IP address of your Raspberry Pi [hostname -I]
-3. 3. Open RealVNC Viewer
-4. Enter IP address
-5. Login to Raspberry Pi
-
----
-
-### Step 3: Install Required Libraries
-
-pip install -r requirements.txt
-
----
-
-### Step 4: Run the Project
-
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
 python3 main.py
+```
 
----
+Several dependencies require Raspberry Pi hardware or system packages. Review the source and configure local service credentials before running; never commit credentials or real location data. These commands have not been run as part of this README update.
 
-## 🌐 Cloud Integration
+## Project type
 
-ThingSpeak cloud is used for:
-
-- Health monitoring
-- Emergency data storage
-- Real-time visualization
-
----
-
-## 🧪 Testing Results
-
-The system was successfully tested for:
-
-- Panic button emergency activation
-- Voice command activation
-- SMS alert delivery
-- Email alert delivery
-- GPS location accuracy
-- Image capture
-- ThingSpeak cloud upload
-
----
-
-## 📱 Applications
-
-- Women personal safety
-- Elderly monitoring
-- Child safety system
-- Healthcare monitoring
-- Smart wearable safety device
-- Emergency response support
-
----
-
-## 🔮 Future Scope
-
-- Mobile application integration
-- 4G / 5G communication
-- Live video streaming
-- Fall detection system
-- AI-based automatic threat detection
-- Improved battery optimization
-
----
-
-## 🛠 Technologies Used
-
-- IoT (Internet of Things)
-- Raspberry Pi
-- Python
-- GSM Communication
-- GPS Tracking
-- ThingSpeak Cloud
-- Gemini AI
-- OpenCV
-
----
-
-## 👩‍💻 Authors
-
-Bhoomika S Shetty  
-USN: 4SU22IS012  
-
-D P Thanmayi  
-USN: 4SU22IS014  
-
-Sinchana K A  
-USN: 4SU22IS046  
-
-Yashaswini  
-USN: 4SU22IS063  
-
-Department of Information Science and Engineering  
-SDM Institute of Technology, Ujire  
-Affiliated to Visvesvaraya Technological University, Belagavi  
-
----
-
-## 👩‍🏫 Project Guide
-
-Ms. Shobha  
-Assistant Professor  
-Department of Information Science and Engineering  
-SDM Institute of Technology, Ujire  
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-## ✅ Conclusion
-
-This project demonstrates a real-time IoT-based women safety system integrating Raspberry Pi, GPS, GSM, AI, and cloud technology.  
-It provides reliable emergency alerts, evidence capture, and health monitoring, making it an effective wearable safety solution.
-
----
-
-## 🔑 Keywords
-
-Women Safety, IoT, Raspberry Pi, GPS, GSM, Emergency Alert, ThingSpeak, Gemini AI, Health Monitoring, Smart Wearable
+Collaborative academic prototype. The previous README listed student registration numbers; those identifiers are removed from the current README. Confirm team attribution with collaborators before publishing names or claiming individual ownership.
